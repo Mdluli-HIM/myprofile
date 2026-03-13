@@ -1,0 +1,17 @@
+import { BottomDock } from "@/components/layout/bottom-dock";
+import { SiteHeader } from "@/components/layout/site-header";
+import { AboutHero } from "@/components/about/about-hero";
+import { AboutSections } from "@/components/about/about-sections";
+
+export default function AboutPage() {
+  return (
+    <>
+      <SiteHeader />
+      <main>
+        <AboutHero />
+        <AboutSections />
+      </main>
+      <BottomDock />
+    </>
+  );
+}
