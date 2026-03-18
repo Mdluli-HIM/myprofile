@@ -8,8 +8,13 @@ export default function ContactPage() {
     <>
       <SiteHeader />
       <main>
-        <ContactHero />
-        <ContactSections />
+        <section className="theme-dark">
+          <ContactHero />
+        </section>
+
+        <section className="theme-light">
+          <ContactSections />
+        </section>
       </main>
       <BottomDock />
     </>

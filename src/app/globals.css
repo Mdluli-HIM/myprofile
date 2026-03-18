@@ -1,24 +1,33 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0e0e0d;
+  --background: #0f0f0e;
   --surface: #171715;
-  --surface-2: #1d1d1a;
-  --foreground: #f3eee6;
-  --muted: #aaa195;
-  --line: rgba(243, 238, 230, 0.12);
-  --line-strong: rgba(243, 238, 230, 0.2);
+  --surface-2: #1e1d1b;
+  --foreground: #f7f4ee;
+  --muted: #b7aea3;
+
+  --line: rgba(244, 239, 232, 0.12);
+  --line-strong: rgba(244, 239, 232, 0.2);
 
   --accent: #9f3a32;
   --accent-hover: #8d3129;
-  --accent-border: #7a2a24;
-  --accent-ink: #fff5f2;
+  --accent-border: #77251f;
+  --accent-ink: #fff4f1;
+
+  --light-background: #f4f4f0;
+  --light-surface: #f4f4f0;
+  --light-surface-2: #f4f4f0;
+  --light-foreground: #0f0f0f;
+  --light-muted: #5a544d;
+  --light-line: rgba(17, 17, 17, 0.1);
 
   --panel: rgba(255, 255, 255, 0.04);
   --panel-dark: rgba(255, 255, 255, 0.06);
   --radius: 24px;
   --max-width: 1600px;
 }
+
 * {
   box-sizing: border-box;
   min-width: 0;
@@ -73,7 +82,7 @@ img {
 }
 
 .section-line {
-  border-top: 1px solid var(--line);
+  border-top: 0;
 }
 
 .eyebrow {
@@ -117,27 +126,34 @@ img {
 .mobile-safe-bottom {
   padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 1rem);
 }
-
-.surface-panel {
-  border: 1px solid rgba(243, 238, 230, 0.1);
-  background: var(--surface);
+.section-line {
+  border-top: 0;
 }
 
-.surface-panel-soft {
-  border: 1px solid rgba(243, 238, 230, 0.08);
-  background: var(--surface-2);
+.surface-panel,
+.surface-panel-soft,
+.light-panel,
+.light-panel-soft,
+.dark-panel,
+.dark-panel-soft {
+  border: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .surface-field {
-  min-height: 3rem;
+  min-height: 3.25rem;
   width: 100%;
-  border: 1px solid rgba(243, 238, 230, 0.1);
-  background: var(--surface-2);
+  border: 0;
+  border-radius: 0;
+  background: transparent;
   color: var(--foreground);
   outline: none;
+  box-shadow: none;
   transition:
-    border-color 0.25s ease,
-    background-color 0.25s ease;
+    color 0.25s ease,
+    background-color 0.25s ease,
+    opacity 0.25s ease;
 }
 
 .surface-field::placeholder {
@@ -145,14 +161,112 @@ img {
 }
 
 .surface-field:focus {
-  border-color: rgba(243, 238, 230, 0.22);
-  background: #22211f;
+  background: transparent;
 }
 
-.surface-hover-soft:hover {
-  background: rgba(255, 255, 255, 0.03);
+.theme-light .surface-field {
+  color: var(--light-foreground);
 }
 
+.theme-light .surface-field::placeholder {
+  color: rgba(17, 17, 17, 0.35);
+}
+
+.surface-hover-soft:hover,
 .surface-hover-strong:hover {
-  background: rgba(255, 255, 255, 0.05);
+  background: transparent;
+}
+
+.editorial-divider {
+  border-top: 0;
+}
+
+.theme-dark {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.theme-light {
+  background: var(--light-background);
+  color: var(--light-foreground);
+}
+
+.theme-light .eyebrow {
+  color: var(--light-foreground);
+  opacity: 0.72;
+}
+
+.theme-light .body-muted {
+  color: var(--light-muted);
+}
+
+.theme-light .section-line {
+  border-top: 1px solid var(--light-line);
+}
+
+.light-panel {
+  border: 1px solid rgba(21, 21, 21, 0.08);
+  background: var(--light-surface);
+}
+
+.light-panel-soft {
+  border: 1px solid rgba(21, 21, 21, 0.08);
+  background: var(--light-surface-2);
+}
+
+.dark-panel {
+  border: 1px solid rgba(244, 239, 232, 0.1);
+  background: var(--surface);
+}
+
+.dark-panel-soft {
+  border: 1px solid rgba(244, 239, 232, 0.08);
+  background: var(--surface-2);
+}
+
+.light-muted {
+  color: var(--light-muted);
+}
+
+.editorial-divider {
+  border-top: 1px solid var(--line);
+}
+
+.theme-light .editorial-divider {
+  border-top: 1px solid var(--light-line);
+}
+
+.editorial-block {
+  padding-top: 1.25rem;
+}
+
+.editorial-title-dark {
+  color: var(--foreground);
+}
+
+.editorial-title-light {
+  color: var(--light-foreground);
+}
+
+.editorial-copy-dark {
+  color: var(--muted);
+}
+
+.editorial-copy-light {
+  color: var(--light-muted);
+}
+
+.editorial-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 0.15rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 11px;
+}
+
+.editorial-kicker {
+  color: var(--accent);
 }

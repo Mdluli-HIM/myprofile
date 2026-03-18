@@ -18,7 +18,7 @@ export function AboutHero() {
         <div className="section-line pt-6">
           <div className="grid gap-10 lg:grid-cols-12">
             <div className="lg:col-span-3">
-              <p className="eyebrow">{aboutIntro.eyebrow}</p>
+              <p className="eyebrow">About</p>
             </div>
 
             <div className="lg:col-span-6">
@@ -41,28 +41,32 @@ export function AboutHero() {
             </div>
 
             <div className="lg:col-span-3">
-              <div className="surface-panel p-5">
+              <div className="dark-panel p-5">
                 <div className="flex h-16 w-16 items-center justify-center border border-white/10 bg-[color:var(--surface-2)] text-xl tracking-[-0.05em]">
                   M
                 </div>
 
                 <div className="mt-8 space-y-6">
                   <div>
-                    <p className="eyebrow">Location</p>
+                    <p className="eyebrow text-[color:var(--accent)]">
+                      Location
+                    </p>
                     <p className="mt-2 text-sm tracking-[-0.02em] text-[color:var(--muted)]">
                       {aboutIntro.location}
                     </p>
                   </div>
 
                   <div>
-                    <p className="eyebrow">Email</p>
+                    <p className="eyebrow text-[color:var(--accent)]">Email</p>
                     <p className="mt-2 text-sm tracking-[-0.02em] text-[color:var(--muted)]">
                       {aboutIntro.email}
                     </p>
                   </div>
 
                   <div>
-                    <p className="eyebrow">Availability</p>
+                    <p className="eyebrow text-[color:var(--accent)]">
+                      Availability
+                    </p>
                     <p className="mt-2 text-sm tracking-[-0.02em] text-[color:var(--muted)]">
                       {aboutIntro.availability}
                     </p>

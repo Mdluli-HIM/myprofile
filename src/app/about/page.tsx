@@ -8,8 +8,13 @@ export default function AboutPage() {
     <>
       <SiteHeader />
       <main>
-        <AboutHero />
-        <AboutSections />
+        <section className="theme-dark">
+          <AboutHero />
+        </section>
+
+        <section className="theme-light">
+          <AboutSections />
+        </section>
       </main>
       <BottomDock />
     </>
