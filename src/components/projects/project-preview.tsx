@@ -13,20 +13,21 @@ type ProjectPreviewProps = {
 
 const CARD_WIDTH = 300;
 const CARD_HEIGHT = 630;
-const VIEWPORT_PADDING = 24;
+const VIEWPORT_PADDING = 25;
+const EASE = [0.16, 1, 0.3, 1] as const;
 
 export function ProjectPreview({ project, x, y }: ProjectPreviewProps) {
   const pointerX = useMotionValue(x + 28);
   const pointerY = useMotionValue(y - 120);
 
   const springX = useSpring(pointerX, {
-    stiffness: 220,
+    stiffness: 240,
     damping: 28,
     mass: 0.8,
   });
 
   const springY = useSpring(pointerY, {
-    stiffness: 220,
+    stiffness: 240,
     damping: 28,
     mass: 0.8,
   });
@@ -50,13 +51,13 @@ export function ProjectPreview({ project, x, y }: ProjectPreviewProps) {
     <motion.div
       className="pointer-events-none fixed left-0 top-0 z-40 hidden md:block"
       style={{ x: springX, y: springY }}
-      initial={{ opacity: 0, scale: 0.94, rotate: -2, filter: "blur(10px)" }}
+      initial={{ opacity: 0, scale: 0.96, rotate: -1.5, filter: "blur(8px)" }}
       animate={{ opacity: 1, scale: 1, rotate: 0, filter: "blur(0px)" }}
-      exit={{ opacity: 0, scale: 0.94, rotate: 2, filter: "blur(8px)" }}
-      transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
+      exit={{ opacity: 0, scale: 0.98, rotate: 1.5, filter: "blur(6px)" }}
+      transition={{ duration: 0.22, ease: EASE }}
     >
-      <div className="w-[300px] overflow-hidden border border-white/20 bg-black text-white shadow-[0_30px_80px_rgba(0,0,0,0.28)]">
-        <div className="relative aspect-[4/4.55] overflow-hidden">
+      <div className="w-[300px] overflow-hidden border border-white/10 bg-[color:var(--surface)] text-[color:var(--foreground)] shadow-[0_24px_70px_rgba(0,0,0,0.38)]">
+        <div className="relative aspect-[4/5] overflow-hidden border-b border-white/10 bg-[#151412]">
           <Image
             src={project.preview}
             alt={project.title}
@@ -65,27 +66,33 @@ export function ProjectPreview({ project, x, y }: ProjectPreviewProps) {
             className="object-cover"
             priority
           />
+
+          <div className="absolute inset-0 bg-gradient-to-t from-black/18 via-transparent to-transparent" />
         </div>
 
-        <div className="space-y-2.5 p-3.5">
+        <div className="p-4">
           <div className="flex items-start justify-between gap-4">
             <div>
-              <p className="text-[1.02rem] tracking-[-0.04em]">
+              <p className="eyebrow text-[color:var(--accent)]">Preview</p>
+              <p className="mt-2 text-[1.02rem] leading-none tracking-[-0.04em]">
                 {project.title}
               </p>
-              <p className="mt-1 text-[13px] text-white/65">{project.year}</p>
             </div>
+
+            <p className="text-[10px] uppercase tracking-[0.18em] text-[color:var(--muted)]">
+              {project.year}
+            </p>
           </div>
 
-          <p className="text-[13px] leading-5 text-white/72">
+          <p className="mt-4 text-[13px] leading-6 text-[color:var(--muted)]">
             {project.tagline}
           </p>
 
-          <div className="flex flex-wrap gap-1.5">
-            {project.services.slice(0, 3).map((service) => (
+          <div className="mt-4 flex flex-wrap gap-1.5">
+            {project.services.slice(0, 2).map((service) => (
               <span
                 key={service}
-                className="rounded-full border border-white/15 px-2.5 py-1 text-[9px] uppercase tracking-[0.18em] text-white/70"
+                className="border border-white/10 bg-[color:var(--surface-2)] px-2.5 py-1 text-[9px] uppercase tracking-[0.18em] text-[color:var(--muted)]"
               >
                 {service}
               </span>

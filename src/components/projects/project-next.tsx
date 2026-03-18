@@ -10,17 +10,17 @@ type ProjectNextProps = {
   project: Project;
 };
 
-const EASE = [0.22, 1, 0.36, 1] as const;
+const EASE = [0.16, 1, 0.3, 1] as const;
 
 export function ProjectNext({ project }: ProjectNextProps) {
   return (
     <section className="site-container pb-24 md:pb-32">
       <motion.div
-        initial={{ opacity: 0, y: 40, filter: "blur(8px)" }}
-        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.25 }}
-        transition={{ duration: 0.8, ease: EASE }}
-        className="border-t border-black/10 pt-6 md:pt-8"
+        transition={{ duration: 0.6, ease: EASE }}
+        className="border-t border-white/10 pt-6 md:pt-8"
       >
         <div className="grid gap-6 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-2">
@@ -50,7 +50,9 @@ export function ProjectNext({ project }: ProjectNextProps) {
 
                 <div className="flex items-center lg:col-span-5">
                   <div className="max-w-xl">
-                    <p className="eyebrow">{project.year}</p>
+                    <p className="eyebrow text-[color:var(--accent)]">
+                      {project.year}
+                    </p>
 
                     <h2 className="mt-4 text-[clamp(2rem,8vw,5.5rem)] leading-[0.95] tracking-[-0.06em]">
                       {project.title}
@@ -60,13 +62,13 @@ export function ProjectNext({ project }: ProjectNextProps) {
                       {project.tagline}
                     </p>
 
-                    <div className="mt-8 inline-flex items-center gap-3 border border-black/10 bg-white px-4 py-3 text-[11px] uppercase tracking-[0.22em] md:rounded-full md:px-5">
+                    <div className="mt-8 inline-flex items-center gap-3 border border-white/10 bg-[color:var(--surface-2)] px-4 py-3 text-[11px] uppercase tracking-[0.22em] md:rounded-full md:px-5">
                       <span>Open case study</span>
                       <motion.span
                         initial={false}
                         whileHover={{ x: 4, y: -4 }}
-                        transition={{ duration: 0.25 }}
-                        className="inline-flex"
+                        transition={{ duration: 0.2 }}
+                        className="inline-flex text-[color:var(--accent)]"
                       >
                         <ArrowUpRight size={16} />
                       </motion.span>

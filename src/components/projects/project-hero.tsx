@@ -10,15 +10,15 @@ type ProjectHeroProps = {
   project: Project;
 };
 
-const EASE = [0.22, 1, 0.36, 1] as const;
+const EASE = [0.16, 1, 0.3, 1] as const;
 
 export function ProjectHero({ project }: ProjectHeroProps) {
   return (
     <section className="site-container pt-28 pb-14 md:pt-32 md:pb-20">
       <motion.div
-        initial={{ opacity: 0, y: 28, filter: "blur(8px)" }}
-        animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-        transition={{ duration: 0.7, ease: EASE }}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.55, ease: EASE }}
       >
         <div className="section-line pt-6">
           <div className="grid gap-8 lg:grid-cols-12 lg:gap-10">
@@ -36,10 +36,10 @@ export function ProjectHero({ project }: ProjectHeroProps) {
               <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap">
                 <Link
                   href="/work"
-                  className="inline-flex items-center justify-center gap-2 border border-black/10 bg-white px-5 py-3 text-[11px] uppercase tracking-[0.22em]"
+                  className="inline-flex min-h-12 items-center justify-center gap-2 border border-white/10 bg-[color:var(--surface-2)] px-5 py-3 text-[11px] uppercase tracking-[0.22em] text-[color:var(--foreground)] transition-colors duration-300 hover:bg-white/[0.05]"
                 >
                   <ArrowLeft size={14} />
-                  Back to work
+                  <span>Back to work</span>
                 </Link>
 
                 {project.liveUrl ? (
@@ -47,9 +47,9 @@ export function ProjectHero({ project }: ProjectHeroProps) {
                     href={project.liveUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center justify-center gap-2 bg-black px-5 py-3 text-[11px] uppercase tracking-[0.22em] text-white"
+                    className="inline-flex min-h-12 items-center justify-center gap-2 border border-[color:var(--accent-border)] bg-[color:var(--accent)] px-5 py-3 text-[11px] uppercase tracking-[0.22em] text-[color:var(--accent-ink)] transition-colors duration-300 hover:bg-[color:var(--accent-hover)]"
                   >
-                    View live
+                    <span>View live</span>
                     <ArrowUpRight size={14} />
                   </a>
                 ) : null}
@@ -58,7 +58,7 @@ export function ProjectHero({ project }: ProjectHeroProps) {
           </div>
         </div>
 
-        <div className="mt-14 grid gap-8 border-t border-black/10 pt-8 lg:mt-20 lg:grid-cols-12 lg:gap-10">
+        <div className="mt-14 grid gap-8 border-t border-white/10 pt-8 lg:mt-20 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-3">
             <p className="eyebrow">Overview</p>
           </div>
@@ -70,7 +70,7 @@ export function ProjectHero({ project }: ProjectHeroProps) {
           </div>
 
           <div className="lg:col-span-4">
-            <div className="grid gap-6 border border-black/10 bg-white/55 p-5 sm:grid-cols-2 md:p-6">
+            <div className="surface-panel grid gap-6 p-5 sm:grid-cols-2 md:p-6">
               <div>
                 <p className="eyebrow">Year</p>
                 <p className="mt-3 text-base tracking-[-0.03em] md:text-lg">
@@ -89,7 +89,10 @@ export function ProjectHero({ project }: ProjectHeroProps) {
                 <p className="eyebrow">Role</p>
                 <div className="mt-3 space-y-2">
                   {project.role.map((item) => (
-                    <p key={item} className="text-base tracking-[-0.03em] md:text-lg">
+                    <p
+                      key={item}
+                      className="text-base tracking-[-0.03em] md:text-lg"
+                    >
                       {item}
                     </p>
                   ))}
@@ -102,7 +105,7 @@ export function ProjectHero({ project }: ProjectHeroProps) {
                   {project.services.map((service) => (
                     <span
                       key={service}
-                      className="border border-black/10 px-3 py-1.5 text-[10px] uppercase tracking-[0.18em] text-[color:var(--muted)] md:text-[11px]"
+                      className="border border-white/10 bg-[color:var(--surface-2)] px-3 py-1.5 text-[10px] uppercase tracking-[0.18em] text-[color:var(--muted)] md:text-[11px]"
                     >
                       {service}
                     </span>
@@ -114,9 +117,9 @@ export function ProjectHero({ project }: ProjectHeroProps) {
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 36, scale: 0.985 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.12, ease: EASE }}
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.62, delay: 0.08, ease: EASE }}
           className="mt-14 md:mt-20"
         >
           <ProjectMediaFrame

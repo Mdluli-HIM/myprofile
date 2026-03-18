@@ -4,6 +4,7 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 type Aspect = "16/10" | "16/9" | "16/12" | "16/11" | "4/5";
+type Fit = "cover" | "contain";
 
 type ProjectMediaFrameProps = {
   image: string;
@@ -18,6 +19,8 @@ type ProjectMediaFrameProps = {
   interactive?: boolean;
   className?: string;
   variant?: "default" | "minimal";
+  fit?: Fit;
+  mobileFit?: Fit;
 };
 
 const responsiveAspectClassMap: Record<string, string> = {
@@ -36,6 +39,14 @@ const responsiveAspectClassMap: Record<string, string> = {
   "16/9|4/5": "aspect-[16/9] md:aspect-[4/5]",
 };
 
+function getFitClasses(mobileFit: Fit, fit: Fit) {
+  const mobileClass =
+    mobileFit === "contain" ? "object-contain" : "object-cover";
+  const desktopClass =
+    fit === "contain" ? "md:object-contain" : "md:object-cover";
+  return `${mobileClass} ${desktopClass}`;
+}
+
 export function ProjectMediaFrame({
   image,
   alt,
@@ -49,24 +60,22 @@ export function ProjectMediaFrame({
   interactive = false,
   className,
   variant = "default",
+  fit = "cover",
+  mobileFit = "contain",
 }: ProjectMediaFrameProps) {
   const isMinimal = variant === "minimal";
   const aspectKey = `${mobileAspect ?? aspect}|${aspect}`;
-  const aspectClasses =
-    responsiveAspectClassMap[aspectKey] ?? "aspect-[16/10]";
+  const aspectClasses = responsiveAspectClassMap[aspectKey] ?? "aspect-[16/10]";
 
   return (
     <div
       className={cn(
-        "overflow-hidden border border-black/10 bg-black/[0.03]",
-        className
+        "overflow-hidden border border-white/10 bg-[color:var(--surface)]",
+        className,
       )}
     >
       <div
-        className={cn(
-          "relative overflow-hidden bg-black/[0.04]",
-          aspectClasses
-        )}
+        className={cn("relative overflow-hidden bg-[#151412]", aspectClasses)}
       >
         <Image
           src={image}
@@ -75,16 +84,17 @@ export function ProjectMediaFrame({
           priority={priority}
           sizes={sizes}
           className={cn(
-            "object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]",
-            interactive && "group-hover:scale-[1.03]"
+            "transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]",
+            getFitClasses(mobileFit, fit),
+            interactive && fit === "cover" && "md:group-hover:scale-[1.03]",
           )}
         />
 
-        <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/12 via-transparent to-transparent" />
       </div>
 
       {isMinimal ? (
-        <div className="flex items-center justify-between gap-4 border-t border-black/10 px-4 py-3 md:px-5">
+        <div className="flex items-center justify-between gap-4 border-t border-white/10 px-4 py-3 md:px-5">
           <div className="min-w-0">
             {eyebrow ? <p className="eyebrow">{eyebrow}</p> : null}
           </div>
@@ -96,7 +106,7 @@ export function ProjectMediaFrame({
           ) : null}
         </div>
       ) : (
-        <div className="grid gap-3 border-t border-black/10 px-4 py-4 sm:grid-cols-[1fr_auto] sm:items-end md:px-5 md:py-5">
+        <div className="grid gap-3 border-t border-white/10 px-4 py-4 sm:grid-cols-[1fr_auto] sm:items-end md:px-5 md:py-5">
           <div>
             {eyebrow ? <p className="eyebrow">{eyebrow}</p> : null}
             {title ? (

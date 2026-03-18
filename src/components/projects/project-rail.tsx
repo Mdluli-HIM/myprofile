@@ -53,7 +53,7 @@ export function ProjectRail() {
 
           <div className="lg:col-span-9">
             <h2 className="section-title max-w-5xl">
-              Each project opens like a story, not a card in a grid.
+              Selected work built around motion, clarity, and control.
             </h2>
           </div>
         </div>
@@ -78,7 +78,7 @@ export function ProjectRail() {
           />
         ))}
 
-        <div className="border-t border-black/10" />
+        <div className="border-t border-white/10" />
       </div>
 
       <AnimatePresence>

@@ -4,17 +4,17 @@ import { motion } from "motion/react";
 import { capabilities, philosophy, process, stack } from "@/content/about";
 import { TransitionLink } from "@/components/ui/transition-link";
 
-const EASE = [0.22, 1, 0.36, 1] as const;
+const EASE = [0.16, 1, 0.3, 1] as const;
 
 export function AboutSections() {
   return (
     <section className="site-container pb-32">
       <motion.div
-        initial={{ opacity: 0, y: 32, filter: "blur(8px)" }}
-        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.7, ease: EASE }}
-        className="border-t border-black/10 pt-8"
+        transition={{ duration: 0.55, ease: EASE }}
+        className="border-t border-white/10 pt-8"
       >
         <div className="grid gap-8 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-3">
@@ -23,10 +23,7 @@ export function AboutSections() {
 
           <div className="grid gap-6 md:grid-cols-3 lg:col-span-9">
             {philosophy.map((item) => (
-              <div
-                key={item.title}
-                className="border border-black/10 bg-white/60 p-6"
-              >
+              <div key={item.title} className="surface-panel p-6">
                 <h2 className="text-2xl tracking-[-0.04em]">{item.title}</h2>
                 <p className="mt-4 text-sm leading-7 text-[color:var(--muted)] md:text-base">
                   {item.body}
@@ -38,11 +35,11 @@ export function AboutSections() {
       </motion.div>
 
       <motion.div
-        initial={{ opacity: 0, y: 32, filter: "blur(8px)" }}
-        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.7, ease: EASE }}
-        className="mt-24 border-t border-black/10 pt-8"
+        transition={{ duration: 0.55, ease: EASE }}
+        className="mt-24 border-t border-white/10 pt-8"
       >
         <div className="grid gap-8 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-3">
@@ -54,7 +51,7 @@ export function AboutSections() {
               {capabilities.map((item) => (
                 <span
                   key={item}
-                  className="border border-black/10 px-4 py-2 text-[11px] uppercase tracking-[0.2em] text-[color:var(--muted)]"
+                  className="border border-white/10 bg-[color:var(--surface)] px-4 py-2 text-[11px] uppercase tracking-[0.2em] text-[color:var(--muted)]"
                 >
                   {item}
                 </span>
@@ -65,11 +62,11 @@ export function AboutSections() {
       </motion.div>
 
       <motion.div
-        initial={{ opacity: 0, y: 32, filter: "blur(8px)" }}
-        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.7, ease: EASE }}
-        className="mt-24 border-t border-black/10 pt-8"
+        transition={{ duration: 0.55, ease: EASE }}
+        className="mt-24 border-t border-white/10 pt-8"
       >
         <div className="grid gap-8 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-3">
@@ -77,13 +74,13 @@ export function AboutSections() {
           </div>
 
           <div className="lg:col-span-9">
-            <div className="divide-y divide-black/10 border border-black/10">
+            <div className="divide-y divide-white/10 border border-white/10 bg-[color:var(--surface)]">
               {process.map((item) => (
                 <div
                   key={item.step}
                   className="grid gap-6 p-6 md:grid-cols-[90px_1fr]"
                 >
-                  <p className="text-sm tracking-[-0.03em] text-[color:var(--muted)]">
+                  <p className="text-sm tracking-[-0.03em] text-[color:var(--accent)]">
                     {item.step}
                   </p>
 
@@ -103,11 +100,11 @@ export function AboutSections() {
       </motion.div>
 
       <motion.div
-        initial={{ opacity: 0, y: 32, filter: "blur(8px)" }}
-        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.7, ease: EASE }}
-        className="mt-24 border-t border-black/10 pt-8"
+        transition={{ duration: 0.55, ease: EASE }}
+        className="mt-24 border-t border-white/10 pt-8"
       >
         <div className="grid gap-8 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-3">
@@ -119,7 +116,7 @@ export function AboutSections() {
               {stack.map((item) => (
                 <div
                   key={item}
-                  className="border border-black/10 bg-white/50 px-4 py-4 text-sm tracking-[-0.03em]"
+                  className="surface-panel-soft px-4 py-4 text-sm tracking-[-0.03em]"
                 >
                   {item}
                 </div>
@@ -130,11 +127,11 @@ export function AboutSections() {
       </motion.div>
 
       <motion.div
-        initial={{ opacity: 0, y: 32, filter: "blur(8px)" }}
-        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.7, ease: EASE }}
-        className="mt-24 border-t border-black/10 pt-8"
+        transition={{ duration: 0.55, ease: EASE }}
+        className="mt-24 border-t border-white/10 pt-8"
       >
         <div className="grid gap-8 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-3">
@@ -142,7 +139,7 @@ export function AboutSections() {
           </div>
 
           <div className="lg:col-span-9">
-            <div className="border border-black/10 bg-white/65 p-6 md:p-8">
+            <div className="surface-panel p-6 md:p-8">
               <h2 className="section-title max-w-4xl">
                 Looking for a website that feels carefully designed, not
                 assembled?
@@ -158,7 +155,7 @@ export function AboutSections() {
                 <TransitionLink
                   href="/contact"
                   label="Start a project"
-                  className="inline-flex items-center rounded-full border border-black/10 bg-white px-5 py-3 text-[11px] uppercase tracking-[0.22em] transition-colors duration-300 hover:bg-[color:var(--surface)]"
+                  className="inline-flex items-center rounded-full border border-[color:var(--accent-border)] bg-[color:var(--accent)] px-5 py-3 text-[11px] uppercase tracking-[0.22em] text-[color:var(--accent-ink)] transition-colors duration-300 hover:bg-[color:var(--accent-hover)]"
                 >
                   Start a project
                 </TransitionLink>

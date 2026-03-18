@@ -14,7 +14,7 @@ const links = [
   { href: "/about", label: "About", transitionLabel: "About" },
 ];
 
-const EASE = [0.22, 1, 0.36, 1] as const;
+const EASE = [0.16, 1, 0.3, 1] as const;
 
 export function BottomDock() {
   const pathname = usePathname();
@@ -25,15 +25,11 @@ export function BottomDock() {
       <motion.div
         className="mobile-safe-bottom fixed inset-x-0 bottom-0 z-50 flex justify-center px-4"
         animate={{
-          opacity: menuOpen ? 0.22 : 1,
-          scale: menuOpen ? 0.94 : 1,
-          y: menuOpen ? 10 : 0,
-          filter: menuOpen ? "blur(4px)" : "blur(0px)",
+          opacity: menuOpen ? 0.18 : 1,
+          scale: menuOpen ? 0.965 : 1,
+          y: menuOpen ? 8 : 0,
         }}
-        transition={{
-          duration: 0.42,
-          ease: EASE,
-        }}
+        transition={{ duration: 0.34, ease: EASE }}
         style={{
           pointerEvents: menuOpen ? "none" : "auto",
           transformOrigin: "center bottom",
@@ -41,28 +37,20 @@ export function BottomDock() {
       >
         <motion.div
           layout
-          className="flex items-center rounded-full border border-black/10 bg-white/88 px-2 py-2 shadow-[0_12px_35px_rgba(0,0,0,0.08)] backdrop-blur-md"
-          animate={{
-            paddingLeft: menuOpen ? 6 : 8,
-            paddingRight: menuOpen ? 6 : 8,
-          }}
-          transition={{
-            duration: 0.38,
-            ease: EASE,
-          }}
+          className="flex items-center rounded-full border border-white/10 bg-[color:var(--surface)]/92 px-2 py-2 shadow-[0_12px_35px_rgba(0,0,0,0.28)] backdrop-blur-md"
         >
           <TransitionLink
             href="/"
             label="Home"
-            className="mr-2 flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white text-sm tracking-[-0.04em] md:h-11 md:w-11"
+            className="mr-2 flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-[color:var(--surface-2)] text-sm tracking-[-0.04em] md:h-11 md:w-11"
           >
-            N
+            M
           </TransitionLink>
 
           <motion.div
             className="flex items-center gap-1"
             animate={{ opacity: menuOpen ? 0.7 : 1 }}
-            transition={{ duration: 0.28, ease: EASE }}
+            transition={{ duration: 0.24, ease: EASE }}
           >
             {links.map((link, index) => {
               const isActive =
@@ -79,8 +67,8 @@ export function BottomDock() {
                     "rounded-full px-3 py-2 text-[10px] uppercase tracking-[0.22em] transition-colors duration-300 sm:px-4 md:px-5 md:py-3 md:text-[11px]",
                     index === 2 && "hidden sm:inline-flex",
                     isActive
-                      ? "bg-[color:var(--surface)] text-black"
-                      : "text-[color:var(--muted)] hover:text-black"
+                      ? "bg-[color:var(--accent)] text-[color:var(--accent-ink)]"
+                      : "text-[color:var(--muted)] hover:text-[color:var(--foreground)]",
                   )}
                 >
                   {link.label}
@@ -90,15 +78,12 @@ export function BottomDock() {
           </motion.div>
 
           <motion.div
-            className="mx-2 h-6 w-px bg-black/10 md:h-7"
+            className="mx-2 h-6 w-px bg-white/10 md:h-7"
             animate={{
               opacity: menuOpen ? 0.45 : 1,
               scaleY: menuOpen ? 0.8 : 1,
             }}
-            transition={{
-              duration: 0.32,
-              ease: EASE,
-            }}
+            transition={{ duration: 0.24, ease: EASE }}
           />
 
           {menuOpen ? (

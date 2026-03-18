@@ -5,15 +5,15 @@ import { ArrowUpRight } from "lucide-react";
 import { playgroundIntro } from "@/content/playground";
 import { TransitionLink } from "@/components/ui/transition-link";
 
-const EASE = [0.22, 1, 0.36, 1] as const;
+const EASE = [0.16, 1, 0.3, 1] as const;
 
 export function PlaygroundHero() {
   return (
     <section className="site-container pt-32 pb-20">
       <motion.div
-        initial={{ opacity: 0, y: 28, filter: "blur(8px)" }}
-        animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-        transition={{ duration: 0.7, ease: EASE }}
+        initial={{ opacity: 0, y: 22 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.55, ease: EASE }}
       >
         <div className="section-line pt-6">
           <div className="grid gap-10 lg:grid-cols-12">
@@ -32,7 +32,7 @@ export function PlaygroundHero() {
             </div>
 
             <div className="lg:col-span-3">
-              <div className="border border-black/10 bg-white/70 p-5">
+              <div className="surface-panel p-5">
                 <p className="eyebrow">Note</p>
                 <p className="mt-4 text-sm leading-7 text-[color:var(--muted)]">
                   {playgroundIntro.note}
@@ -42,7 +42,7 @@ export function PlaygroundHero() {
                   <TransitionLink
                     href="/work"
                     label="Selected Work"
-                    className="inline-flex items-center gap-3 rounded-full border border-black/10 bg-white px-5 py-3 text-[11px] uppercase tracking-[0.22em] transition-colors duration-300 hover:bg-[color:var(--surface)]"
+                    className="inline-flex items-center gap-3 rounded-full border border-[color:var(--accent-border)] bg-[color:var(--accent)] px-5 py-3 text-[11px] uppercase tracking-[0.22em] text-[color:var(--accent-ink)] transition-colors duration-300 hover:bg-[color:var(--accent-hover)]"
                   >
                     View Work
                     <ArrowUpRight size={15} />

@@ -4,15 +4,15 @@ import { motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
 import { contactIntro } from "@/content/contact";
 
-const EASE = [0.22, 1, 0.36, 1] as const;
+const EASE = [0.16, 1, 0.3, 1] as const;
 
 export function ContactHero() {
   return (
     <section className="site-container pt-32 pb-20">
       <motion.div
-        initial={{ opacity: 0, y: 28, filter: "blur(8px)" }}
-        animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-        transition={{ duration: 0.7, ease: EASE }}
+        initial={{ opacity: 0, y: 22 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.55, ease: EASE }}
       >
         <div className="section-line pt-6">
           <div className="grid gap-10 lg:grid-cols-12">
@@ -29,29 +29,32 @@ export function ContactHero() {
             </div>
 
             <div className="lg:col-span-3">
-              <div className="border border-black/10 bg-white/70 p-5">
+              <div className="surface-panel p-5">
                 <div className="space-y-6">
                   <div>
                     <p className="eyebrow">Email</p>
                     <a
                       href={`mailto:${contactIntro.email}`}
-                      className="mt-2 inline-flex items-center gap-2 text-sm tracking-[-0.02em]"
+                      className="mt-2 inline-flex items-center gap-2 text-sm tracking-[-0.02em] text-[color:var(--foreground)]"
                     >
                       {contactIntro.email}
-                      <ArrowUpRight size={14} />
+                      <ArrowUpRight
+                        size={14}
+                        className="text-[color:var(--accent)]"
+                      />
                     </a>
                   </div>
 
                   <div>
                     <p className="eyebrow">Location</p>
-                    <p className="mt-2 text-sm tracking-[-0.02em]">
+                    <p className="mt-2 text-sm tracking-[-0.02em] text-[color:var(--muted)]">
                       {contactIntro.location}
                     </p>
                   </div>
 
                   <div>
                     <p className="eyebrow">Availability</p>
-                    <p className="mt-2 text-sm tracking-[-0.02em]">
+                    <p className="mt-2 text-sm tracking-[-0.02em] text-[color:var(--muted)]">
                       {contactIntro.availability}
                     </p>
                   </div>

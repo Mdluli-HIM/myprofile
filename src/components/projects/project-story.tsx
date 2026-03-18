@@ -8,7 +8,7 @@ type ProjectStoryProps = {
   project: Project;
 };
 
-const EASE = [0.22, 1, 0.36, 1] as const;
+const EASE = [0.16, 1, 0.3, 1] as const;
 
 export function ProjectStory({ project }: ProjectStoryProps) {
   return (
@@ -20,11 +20,11 @@ export function ProjectStory({ project }: ProjectStoryProps) {
           return (
             <motion.article
               key={`${project.slug}-${section.eyebrow}-${index}`}
-              initial={{ opacity: 0, y: 40, filter: "blur(8px)" }}
-              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.22 }}
-              transition={{ duration: 0.7, ease: EASE }}
-              className="border-t border-black/10 pt-6 md:pt-8"
+              transition={{ duration: 0.55, ease: EASE }}
+              className="border-t border-white/10 pt-6 md:pt-8"
             >
               <div className="grid gap-6 lg:grid-cols-12 lg:gap-10">
                 <div className="lg:col-span-2">
@@ -76,11 +76,11 @@ export function ProjectStory({ project }: ProjectStoryProps) {
       </div>
 
       <motion.div
-        initial={{ opacity: 0, y: 40, filter: "blur(8px)" }}
-        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.8, ease: EASE }}
-        className="mt-20 border-t border-black/10 pt-6 md:mt-24 md:pt-8 lg:mt-32"
+        transition={{ duration: 0.6, ease: EASE }}
+        className="mt-20 border-t border-white/10 pt-6 md:mt-24 md:pt-8 lg:mt-32"
       >
         <div className="grid gap-6 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-2">

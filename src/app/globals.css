@@ -1,18 +1,24 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f4f1eb;
-  --surface: #ede8df;
-  --foreground: #151515;
-  --muted: #726c63;
-  --line: rgba(21, 21, 21, 0.12);
-  --line-strong: rgba(21, 21, 21, 0.2);
-  --panel: rgba(255, 255, 255, 0.42);
-  --panel-dark: rgba(17, 17, 17, 0.78);
+  --background: #0e0e0d;
+  --surface: #171715;
+  --surface-2: #1d1d1a;
+  --foreground: #f3eee6;
+  --muted: #aaa195;
+  --line: rgba(243, 238, 230, 0.12);
+  --line-strong: rgba(243, 238, 230, 0.2);
+
+  --accent: #9f3a32;
+  --accent-hover: #8d3129;
+  --accent-border: #7a2a24;
+  --accent-ink: #fff5f2;
+
+  --panel: rgba(255, 255, 255, 0.04);
+  --panel-dark: rgba(255, 255, 255, 0.06);
   --radius: 24px;
   --max-width: 1600px;
 }
-
 * {
   box-sizing: border-box;
   min-width: 0;
@@ -33,7 +39,7 @@ body {
 }
 
 ::selection {
-  background: rgba(21, 21, 21, 0.1);
+  background: rgba(243, 238, 230, 0.14);
   color: var(--foreground);
 }
 
@@ -75,7 +81,7 @@ img {
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--foreground);
-  opacity: 0.8;
+  opacity: 0.72;
 }
 
 .display-title {
@@ -98,16 +104,55 @@ img {
 }
 
 .glass-panel {
-  background: var(--panel);
+  background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .dock-shadow {
-  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
 }
 
 .mobile-safe-bottom {
   padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 1rem);
+}
+
+.surface-panel {
+  border: 1px solid rgba(243, 238, 230, 0.1);
+  background: var(--surface);
+}
+
+.surface-panel-soft {
+  border: 1px solid rgba(243, 238, 230, 0.08);
+  background: var(--surface-2);
+}
+
+.surface-field {
+  min-height: 3rem;
+  width: 100%;
+  border: 1px solid rgba(243, 238, 230, 0.1);
+  background: var(--surface-2);
+  color: var(--foreground);
+  outline: none;
+  transition:
+    border-color 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.surface-field::placeholder {
+  color: rgba(243, 238, 230, 0.35);
+}
+
+.surface-field:focus {
+  border-color: rgba(243, 238, 230, 0.22);
+  background: #22211f;
+}
+
+.surface-hover-soft:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.surface-hover-strong:hover {
+  background: rgba(255, 255, 255, 0.05);
 }

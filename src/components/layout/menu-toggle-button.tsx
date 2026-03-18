@@ -10,7 +10,7 @@ type MenuToggleButtonProps = {
   className?: string;
 };
 
-const EASE = [0.22, 1, 0.36, 1] as const;
+const EASE = [0.16, 1, 0.3, 1] as const;
 
 export function MenuToggleButton({
   mode,
@@ -24,20 +24,20 @@ export function MenuToggleButton({
       onClick={onClick}
       aria-label={mode === "menu" ? "Open menu" : "Close menu"}
       className={cn(
-        "relative flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-white text-black shadow-none",
+        "relative flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-[color:var(--surface-2)] text-[color:var(--foreground)] md:h-11 md:w-11",
         className,
       )}
       whileTap={{ scale: 0.96 }}
-      transition={{ duration: 0.2, ease: EASE }}
+      transition={{ duration: 0.18, ease: EASE }}
     >
       <AnimatePresence mode="wait" initial={false}>
         {mode === "menu" ? (
           <motion.span
             key="menu"
-            initial={{ opacity: 0, rotate: -60, scale: 0.7 }}
+            initial={{ opacity: 0, rotate: -50, scale: 0.78 }}
             animate={{ opacity: 1, rotate: 0, scale: 1 }}
-            exit={{ opacity: 0, rotate: 60, scale: 0.7 }}
-            transition={{ duration: 0.28, ease: EASE }}
+            exit={{ opacity: 0, rotate: 50, scale: 0.78 }}
+            transition={{ duration: 0.22, ease: EASE }}
             className="inline-flex"
           >
             <Menu size={16} strokeWidth={1.75} />
@@ -45,10 +45,10 @@ export function MenuToggleButton({
         ) : (
           <motion.span
             key="close"
-            initial={{ opacity: 0, rotate: 60, scale: 0.7 }}
+            initial={{ opacity: 0, rotate: 50, scale: 0.78 }}
             animate={{ opacity: 1, rotate: 0, scale: 1 }}
-            exit={{ opacity: 0, rotate: -60, scale: 0.7 }}
-            transition={{ duration: 0.28, ease: EASE }}
+            exit={{ opacity: 0, rotate: -50, scale: 0.78 }}
+            transition={{ duration: 0.22, ease: EASE }}
             className="inline-flex"
           >
             <X size={16} strokeWidth={1.75} />
