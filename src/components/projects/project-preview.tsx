@@ -12,9 +12,9 @@ type ProjectPreviewProps = {
 };
 
 const CARD_WIDTH = 300;
-const CARD_HEIGHT = 630;
-const VIEWPORT_PADDING = 25;
-const EASE = [0.16, 1, 0.3, 1] as const;
+const CARD_HEIGHT = 620;
+const VIEWPORT_PADDING = 24;
+const EASE = [0.3, 2, 0.3, 1] as const;
 
 export function ProjectPreview({ project, x, y }: ProjectPreviewProps) {
   const pointerX = useMotionValue(x + 28);
@@ -56,8 +56,8 @@ export function ProjectPreview({ project, x, y }: ProjectPreviewProps) {
       exit={{ opacity: 0, scale: 0.98, rotate: 1.5, filter: "blur(6px)" }}
       transition={{ duration: 0.22, ease: EASE }}
     >
-      <div className="w-[300px] overflow-hidden border border-white/10 bg-[color:var(--surface)] text-[color:var(--foreground)] shadow-[0_24px_70px_rgba(0,0,0,0.38)]">
-        <div className="relative aspect-[4/5] overflow-hidden border-b border-white/10 bg-[#151412]">
+      <div className="w-[300px] overflow-hidden border border-black/10 bg-[color:var(--light-background)] text-[color:var(--light-foreground)] shadow-[0_24px_70px_rgba(0,0,0,0.22)]">
+        <div className="relative aspect-[4/5] overflow-hidden bg-[#e9e5de]">
           <Image
             src={project.preview}
             alt={project.title}
@@ -67,24 +67,26 @@ export function ProjectPreview({ project, x, y }: ProjectPreviewProps) {
             priority
           />
 
-          <div className="absolute inset-0 bg-gradient-to-t from-black/18 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent" />
         </div>
 
-        <div className="p-4">
+        <div className="bg-[color:var(--accent)] px-4 py-4 text-[color:var(--accent-ink)]">
           <div className="flex items-start justify-between gap-4">
             <div>
-              <p className="eyebrow text-[color:var(--accent)]">Preview</p>
+              <p className="eyebrow text-[color:var(--accent-ink)]/72">
+                Preview
+              </p>
               <p className="mt-2 text-[1.02rem] leading-none tracking-[-0.04em]">
                 {project.title}
               </p>
             </div>
 
-            <p className="text-[10px] uppercase tracking-[0.18em] text-[color:var(--muted)]">
+            <p className="text-[10px] uppercase tracking-[0.18em] text-[color:var(--accent-ink)]/70">
               {project.year}
             </p>
           </div>
 
-          <p className="mt-4 text-[13px] leading-6 text-[color:var(--muted)]">
+          <p className="mt-4 text-[13px] leading-6 text-[color:var(--accent-ink)]/82">
             {project.tagline}
           </p>
 
@@ -92,7 +94,7 @@ export function ProjectPreview({ project, x, y }: ProjectPreviewProps) {
             {project.services.slice(0, 2).map((service) => (
               <span
                 key={service}
-                className="border border-white/10 bg-[color:var(--surface-2)] px-2.5 py-1 text-[9px] uppercase tracking-[0.18em] text-[color:var(--muted)]"
+                className="bg-black/10 px-2.5 py-1 text-[9px] uppercase tracking-[0.18em] text-[color:var(--accent-ink)]/78"
               >
                 {service}
               </span>

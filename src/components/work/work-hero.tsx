@@ -1,72 +1,36 @@
 "use client";
 
 import { motion } from "motion/react";
-import { ArrowUpRight } from "lucide-react";
-import { projects } from "@/content/projects";
-import { workIntro } from "@/content/work";
-import { TransitionLink } from "@/components/ui/transition-link";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
 export function WorkHero() {
   return (
-    <section className="site-container pt-32 pb-20">
+    <section className="site-container pt-32 pb-12 text-[color:var(--light-foreground)] md:pb-16">
       <motion.div
-        initial={{ opacity: 0, y: 22 }}
+        initial={{ opacity: 0, y: 18 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.55, ease: EASE }}
+        transition={{ duration: 0.5, ease: EASE }}
       >
-        <div className="section-line pt-6">
-          <div className="grid gap-10 lg:grid-cols-12">
-            <div className="lg:col-span-3">
-              <p className="eyebrow">{workIntro.eyebrow}</p>
-            </div>
+        <div className="grid gap-8 lg:grid-cols-12 lg:gap-10">
+          <div className="lg:col-span-3">
+            <p className="eyebrow text-[color:var(--light-foreground)]">Work</p>
+          </div>
 
-            <div className="lg:col-span-6">
-              <h1 className="display-title max-w-5xl">{workIntro.title}</h1>
+          <div className="lg:col-span-7">
+            <h1 className="display-title max-w-5xl text-[color:var(--light-foreground)]">
+              Selected work.
+            </h1>
 
-              <p className="mt-6 max-w-2xl text-lg leading-8 text-[color:var(--muted)] md:text-xl">
-                {workIntro.lead}
-              </p>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-[color:var(--light-muted)] md:text-xl">
+              Swipe, drag, or scroll through a tighter index of projects.
+            </p>
+          </div>
 
-              <div className="mt-10">
-                <TransitionLink
-                  href="/contact"
-                  label="Start a project"
-                  className="inline-flex items-center gap-3 rounded-full border border-[color:var(--accent-border)] bg-[color:var(--accent)] px-5 py-3 text-[11px] uppercase tracking-[0.22em] text-[color:var(--accent-ink)] transition-colors duration-300 hover:bg-[color:var(--accent-hover)]"
-                >
-                  Start Project
-                  <ArrowUpRight size={15} />
-                </TransitionLink>
-              </div>
-            </div>
-
-            <div className="lg:col-span-3">
-              <div className="surface-panel p-5">
-                <div className="space-y-6">
-                  <div>
-                    <p className="eyebrow">Selected Projects</p>
-                    <p className="mt-2 text-3xl tracking-[-0.05em]">
-                      {String(projects.length).padStart(2, "0")}
-                    </p>
-                  </div>
-
-                  <div>
-                    <p className="eyebrow">Format</p>
-                    <p className="mt-2 text-sm tracking-[-0.02em] text-[color:var(--muted)]">
-                      Design / Frontend / Motion
-                    </p>
-                  </div>
-
-                  <div>
-                    <p className="eyebrow">Note</p>
-                    <p className="mt-2 text-sm leading-7 text-[color:var(--muted)]">
-                      {workIntro.note}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className="lg:col-span-2 lg:flex lg:items-end lg:justify-end">
+            <p className="eyebrow text-[color:var(--accent)]">
+              Horizontal Archive
+            </p>
           </div>
         </div>
       </motion.div>

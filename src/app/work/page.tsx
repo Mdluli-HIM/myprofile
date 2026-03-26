@@ -1,15 +1,15 @@
 import { BottomDock } from "@/components/layout/bottom-dock";
 import { SiteHeader } from "@/components/layout/site-header";
 import { WorkHero } from "@/components/work/work-hero";
-import { WorkSections } from "@/components/work/work-sections";
+import { WorkHorizontalGallery } from "@/components/work/work-horizontal-gallery";
 
 export default function WorkPage() {
   return (
     <>
       <SiteHeader />
-      <main>
+      <main data-nav-tone="light" className="theme-light">
         <WorkHero />
-        <WorkSections />
+        <WorkHorizontalGallery />
       </main>
       <BottomDock />
     </>

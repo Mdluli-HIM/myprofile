@@ -1,18 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0f0f0e;
-  --surface: #171715;
-  --surface-2: #1e1d1b;
-  --foreground: #f7f4ee;
-  --muted: #b7aea3;
-
-  --line: rgba(244, 239, 232, 0.12);
-  --line-strong: rgba(244, 239, 232, 0.2);
+  --background: #151412;
+  --surface: #1d1b18;
+  --surface-2: #25221e;
+  --foreground: #fcf8f2;
+  --muted: #c6bbb0;
+  --line: rgba(252, 248, 242, 0.14);
+  --line-strong: rgba(252, 248, 242, 0.24);
 
   --accent: #9f3a32;
   --accent-hover: #8d3129;
-  --accent-border: #77251f;
+  --line: rgba(252, 248, 242, 0.14);
   --accent-ink: #fff4f1;
 
   --light-background: #f4f4f0;
@@ -269,4 +268,26 @@ img {
 
 .editorial-kicker {
   color: var(--accent);
+}
+
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.snap-x-mandatory {
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.snap-center-item {
+  scroll-snap-align: center;
+}
+
+.snap-start-item {
+  scroll-snap-align: start;
 }

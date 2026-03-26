@@ -4,18 +4,18 @@ import Image from "next/image";
 import { motion } from "motion/react";
 import { homeHeroNote, homeHeroVisual } from "@/content/home";
 
-const EASE = [0.16, 1, 0.3, 1] as const;
+const EASE = [0.22, 1, 0.36, 1] as const;
 
 function MobileHeroVisual() {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 22 }}
+      initial={{ opacity: 0, y: 18 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.52, delay: 0.14, ease: EASE }}
+      transition={{ duration: 0.6, delay: 0.14, ease: EASE }}
       className="mt-10 grid gap-4 lg:hidden"
     >
-      <div className="border border-white/10 bg-[color:var(--surface)] p-3">
-        <div className="relative aspect-[16/11] overflow-hidden border border-white/10 bg-[#151412]">
+      <div className="bg-[rgba(255,255,255,0.035)] p-3">
+        <div className="relative aspect-[16/11] overflow-hidden bg-[#1b1916]">
           <Image
             src={homeHeroVisual.image}
             alt={homeHeroVisual.alt}
@@ -36,7 +36,7 @@ function MobileHeroVisual() {
         </div>
       </div>
 
-      <div className="border border-white/10 bg-[color:var(--surface)] p-5">
+      <div className="bg-[rgba(255,255,255,0.04)] p-5">
         <div className="flex items-start justify-between gap-4">
           <p className="eyebrow text-[color:var(--accent)]">
             {homeHeroNote.eyebrow}
@@ -44,14 +44,14 @@ function MobileHeroVisual() {
           <span className="mt-0.5 inline-flex h-2.5 w-2.5 rounded-full bg-[color:var(--accent)]" />
         </div>
 
-        <h2 className="mt-5 text-[1.45rem] leading-[1.04] tracking-[-0.05em]">
+        <h2 className="mt-5 max-w-[16ch] text-[1.5rem] leading-[1.02] tracking-[-0.05em] text-[color:var(--foreground)]">
           {homeHeroNote.title}
         </h2>
 
-        <div className="mt-5 space-y-3 border-t border-white/10 pt-4">
+        <div className="mt-5 space-y-3 pt-1">
           {homeHeroNote.lines.map((line) => (
             <div key={line} className="flex gap-3">
-              <span className="mt-[0.42rem] h-1.5 w-1.5 shrink-0 rounded-full bg-[color:var(--accent)]/75" />
+              <span className="mt-[0.48rem] h-1.5 w-1.5 shrink-0 rounded-full bg-[color:var(--accent)]/75" />
               <p className="text-sm leading-7 text-[color:var(--muted)]">
                 {line}
               </p>
@@ -65,16 +65,16 @@ function MobileHeroVisual() {
 
 export function Hero() {
   return (
-    <section className="site-container flex min-h-[86svh] items-end pt-28 pb-14 md:min-h-screen md:pt-32 md:pb-20">
+    <section className="site-container flex min-h-[86svh] items-end pt-28 pb-24 md:min-h-screen md:pt-32 md:pb-32">
       <div className="grid w-full gap-8 md:gap-10 lg:grid-cols-12">
         <div className="lg:col-span-2">
           <motion.p
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.45, ease: EASE }}
+            transition={{ duration: 0.48, ease: EASE }}
             className="eyebrow text-[color:var(--accent)]"
           >
-            Designer / Front-end Developer
+         
           </motion.p>
         </div>
 
@@ -82,44 +82,42 @@ export function Hero() {
           <motion.h1
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.56, ease: EASE }}
-            className="display-title max-w-6xl"
+            transition={{ duration: 0.6, ease: EASE }}
+            className="display-title max-w-6xl text-[color:var(--foreground)]"
           >
-            Building websites that feel sharp, fast, and alive.
+            Building premium websites that feel clear, sharp, and alive.
           </motion.h1>
 
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.52, delay: 0.05, ease: EASE }}
+            transition={{ duration: 0.56, delay: 0.06, ease: EASE }}
             className="mt-8 grid gap-6 md:mt-10 md:grid-cols-2 md:gap-8"
           >
-            <p className="body-muted max-w-md">
-              I design and build premium websites, portfolios, and digital
-              experiences with strong rhythm, clear structure, and tighter
-              motion.
+            <p className="max-w-md text-base leading-8 text-[color:var(--muted)]">
+          
             </p>
 
-            <p className="body-muted max-w-md">
-              Focused on creative direction, interaction, and front-end craft
-              using Next.js, Motion, and GSAP.
+            <p className="max-w-md text-base leading-8 text-[color:var(--muted)]">
+             
             </p>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, scaleX: 0, transformOrigin: "left center" }}
+            initial={{ opacity: 0, scaleX: 0 }}
             animate={{ opacity: 1, scaleX: 1 }}
-            transition={{ duration: 0.6, delay: 0.1, ease: EASE }}
-            className="mt-10 h-px w-full max-w-[540px] bg-white/10 md:mt-14"
+            transition={{ duration: 0.7, delay: 0.12, ease: EASE }}
+            style={{ transformOrigin: "left center" }}
+            className="mt-10 h-px w-full max-w-[560px] bg-white/12 md:mt-14"
           />
 
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.45, delay: 0.14, ease: EASE }}
+            transition={{ duration: 0.48, delay: 0.16, ease: EASE }}
             className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-[10px] uppercase tracking-[0.2em] text-[color:var(--muted)] md:mt-5 md:gap-x-6 md:text-[11px]"
           >
-            <span>Dark UI</span>
+            <span>Premium Web</span>
             <span>Motion Systems</span>
             <span>Frontend Craft</span>
           </motion.div>
@@ -129,19 +127,19 @@ export function Hero() {
 
         <div className="hidden lg:col-span-3 lg:flex lg:items-end lg:justify-end">
           <motion.div
-            initial={{ opacity: 0, y: 28 }}
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.56, delay: 0.14, ease: EASE }}
-            className="w-full max-w-[320px] space-y-4"
+            transition={{ duration: 0.62, delay: 0.14, ease: EASE }}
+            className="w-full max-w-[336px] space-y-4"
           >
-            <div className="border border-white/10 bg-[color:var(--surface)] p-3">
-              <div className="relative aspect-[4/5] overflow-hidden border border-white/10 bg-[#151412]">
+            <div className="bg-[rgba(255,255,255,0.035)] p-3">
+              <div className="relative aspect-[4/5] overflow-hidden bg-[#1b1916]">
                 <Image
                   src={homeHeroVisual.image}
                   alt={homeHeroVisual.alt}
                   fill
                   priority
-                  sizes="320px"
+                  sizes="336px"
                   className="object-contain md:object-cover"
                 />
               </div>
@@ -156,7 +154,7 @@ export function Hero() {
               </div>
             </div>
 
-            <div className="w-full border border-white/10 bg-[color:var(--surface)] p-5">
+            <div className="bg-[rgba(255,255,255,0.04)] p-5">
               <div className="flex items-start justify-between gap-4">
                 <p className="eyebrow text-[color:var(--accent)]">
                   {homeHeroNote.eyebrow}
@@ -164,14 +162,14 @@ export function Hero() {
                 <span className="mt-0.5 inline-flex h-2.5 w-2.5 rounded-full bg-[color:var(--accent)]" />
               </div>
 
-              <h2 className="mt-5 text-[1.75rem] leading-[1.02] tracking-[-0.05em]">
+              <h2 className="mt-5 text-[1.8rem] leading-[1.02] tracking-[-0.05em] text-[color:var(--foreground)]">
                 {homeHeroNote.title}
               </h2>
 
-              <div className="mt-6 space-y-4 border-t border-white/10 pt-5">
+              <div className="mt-6 space-y-4">
                 {homeHeroNote.lines.map((line) => (
                   <div key={line} className="flex gap-3">
-                    <span className="mt-[0.42rem] h-1.5 w-1.5 shrink-0 rounded-full bg-[color:var(--accent)]/75" />
+                    <span className="mt-[0.48rem] h-1.5 w-1.5 shrink-0 rounded-full bg-[color:var(--accent)]/75" />
                     <p className="text-sm leading-7 text-[color:var(--muted)]">
                       {line}
                     </p>

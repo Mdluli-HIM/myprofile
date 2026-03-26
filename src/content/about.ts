@@ -1,31 +1,30 @@
 export const aboutIntro = {
   eyebrow: "About",
-  title:
-    "Designing digital experiences that feel precise, cinematic, and human.",
-  lead: "I’m a freelance designer and front-end developer focused on premium websites, interaction systems, and digital storytelling. My work sits between editorial design, motion, and modern frontend craft.",
+  title: "I design and build websites that feel sharp, clear, and considered.",
+  lead: "Premium websites shaped through design, motion, and frontend craft.",
   location: "Cape Town, South Africa",
   email: "hello@yourname.com",
-  availability: "Selectively available for freelance projects",
+  availability: "Selectively available",
 };
 
 export const philosophy = [
   {
-    title: "Restraint over noise",
-    body: "I prefer systems that feel calm, intentional, and memorable. The goal is not to add more, but to shape the right amount of structure, contrast, and motion.",
+    title: "Less, but better",
+    body: "Strong work needs structure, not clutter.",
   },
   {
-    title: "Interaction as atmosphere",
-    body: "Motion should not feel decorative. It should create rhythm, direct attention, and give the interface an emotional quality that strengthens the work.",
+    title: "Motion with purpose",
+    body: "Movement should guide attention, not distract from it.",
   },
   {
-    title: "Design and code together",
-    body: "I do not separate the visual idea from the build. The strongest work happens when layout, behavior, and implementation are shaped as one system.",
+    title: "Design and build together",
+    body: "The idea should stay strong from concept to code.",
   },
 ];
 
 export const capabilities = [
   "Creative Direction",
-  "UI / UX Design",
+  "UI Design",
   "Frontend Development",
   "Motion Design",
   "Design Systems",
@@ -39,22 +38,22 @@ export const process = [
   {
     step: "01",
     title: "Direction",
-    body: "We define tone, references, content hierarchy, and what the experience should make people feel before the interface takes shape.",
+    body: "Define the tone, structure, and visual target.",
   },
   {
     step: "02",
     title: "Design",
-    body: "I build a visual and interaction language that is clear, premium, and tailored to the project rather than pulled from a template.",
+    body: "Build a cleaner system for layout, type, and interaction.",
   },
   {
     step: "03",
     title: "Build",
-    body: "The design is translated into a real product using modern frontend tools, careful animation, and strong attention to pacing and detail.",
+    body: "Translate the design into a fast, polished frontend.",
   },
   {
     step: "04",
     title: "Refine",
-    body: "The final pass focuses on rhythm, responsiveness, polish, performance, and the small details that make the site feel finished.",
+    body: "Tighten the pacing, responsiveness, and final details.",
   },
 ];
 

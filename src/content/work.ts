@@ -1,22 +1,21 @@
 export const workIntro = {
   eyebrow: "Work",
-  title:
-    "A curated selection of digital projects shaped through design, motion, and frontend craft.",
-  lead: "This page brings the portfolio together as a clearer index of selected client work, interface systems, and storytelling-led web experiences.",
-  note: "Each project is approached as a complete world with its own tone, pacing, and interaction logic.",
+  title: "Selected work.",
+  lead: "A few projects built around clarity, motion, and control.",
+  note: "Each project is designed as a complete system.",
 };
 
 export const workNotes = [
   {
     title: "Focus",
-    body: "Premium portfolio websites, studio sites, landing pages, case-study systems, and motion-led digital experiences.",
+    body: "Portfolio websites, studio sites, landing pages, and case-study systems.",
   },
   {
     title: "Approach",
-    body: "Editorial structure, restrained interfaces, careful animation, and front-end implementation that preserves the original design intent.",
+    body: "Clear structure, tighter motion, and strong frontend craft.",
   },
   {
     title: "Output",
-    body: "Work that feels clear, distinct, and well-built across concept, interaction, responsiveness, and detail.",
+    body: "Work that feels sharp, deliberate, and well built.",
   },
 ];

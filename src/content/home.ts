@@ -52,6 +52,6 @@ export const homeEditorial = {
   export const homeHeroVisual = {
     image: "/images/projects/ChatGPT Image Mar 13 2026.png",
     alt: "Editorial workspace and design mood visual",
-    eyebrow: "Visual Note",
-    meta: "Homepage Hero",
+    eyebrow: "Mpho Marcus Mdluli",
+    meta: "Designer / Front-end Developer",
   };

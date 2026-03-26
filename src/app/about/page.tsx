@@ -8,11 +8,11 @@ export default function AboutPage() {
     <>
       <SiteHeader />
       <main>
-        <section className="theme-dark">
+        <section data-nav-tone="dark" className="theme-dark">
           <AboutHero />
         </section>
 
-        <section className="theme-light">
+        <section data-nav-tone="light" className="theme-light">
           <AboutSections />
         </section>
       </main>

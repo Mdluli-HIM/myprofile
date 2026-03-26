@@ -1,10 +1,10 @@
 export const contactIntro = {
   eyebrow: "Contact",
-  title: "Let’s build something thoughtful, distinctive, and well crafted.",
-  lead: "I work with founders, creatives, and studios who want digital work that feels considered from both a design and front-end perspective.",
+  title: "Start a project.",
+  lead: "Tell me what you’re building and what it should feel like.",
   email: "hello@yourname.com",
   location: "Cape Town, South Africa",
-  availability: "Currently available for select freelance projects",
+  availability: "Available for select freelance projects",
 };
 
 export const contactTypes = [
@@ -14,22 +14,22 @@ export const contactTypes = [
   "Case Study Systems",
   "Frontend Development",
   "Interaction Design",
-  "Motion-Driven Experiences",
+  "Motion Systems",
   "Design Systems",
 ];
 
 export const contactNotes = [
   {
     title: "Best fit",
-    body: "Projects that value clarity, strong visual taste, custom interaction, and a premium final build.",
+    body: "Projects that value clarity, craft, and strong interaction.",
   },
   {
-    title: "Typical scope",
-    body: "Creative direction, interface design, motion thinking, and front-end implementation for high-end digital experiences.",
+    title: "Scope",
+    body: "Creative direction, UI design, motion, and frontend build.",
   },
   {
     title: "Timelines",
-    body: "Smaller focused sites can move quickly. Larger portfolio or brand systems benefit from a more structured design and build phase.",
+    body: "Smaller sites move fast. Larger systems need more structure.",
   },
 ];
 

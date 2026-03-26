@@ -11,7 +11,11 @@ type PointerPosition = {
   y: number;
 };
 
-export function ProjectRail() {
+type ProjectRailProps = {
+  variant?: "dark" | "light";
+};
+
+export function ProjectRail({ variant = "dark" }: ProjectRailProps) {
   const [activeSlug, setActiveSlug] = useState<string | null>(null);
   const [expandedSlug, setExpandedSlug] = useState<string | null>(null);
   const [isCoarsePointer, setIsCoarsePointer] = useState(false);
@@ -45,25 +49,12 @@ export function ProjectRail() {
 
   return (
     <section className="site-container pb-32">
-      <div className="section-line pt-6">
-        <div className="grid gap-10 lg:grid-cols-12">
-          <div className="lg:col-span-3">
-            <p className="eyebrow">Selected Work</p>
-          </div>
-
-          <div className="lg:col-span-9">
-            <h2 className="section-title max-w-5xl">
-              Selected work built around motion, clarity, and control.
-            </h2>
-          </div>
-        </div>
-      </div>
-
-      <div className="mt-20">
+      <div className="mt-4">
         {projects.map((project) => (
           <ProjectRow
             key={project.slug}
             project={project}
+            variant={variant}
             isActive={activeSlug === project.slug}
             isExpanded={expandedSlug === project.slug}
             isCoarsePointer={isCoarsePointer}
@@ -78,7 +69,13 @@ export function ProjectRail() {
           />
         ))}
 
-        <div className="border-t border-white/10" />
+        <div
+          className={
+            variant === "light"
+              ? "border-t border-black/10"
+              : "border-t border-white/10"
+          }
+        />
       </div>
 
       <AnimatePresence>

@@ -8,11 +8,11 @@ export default function ContactPage() {
     <>
       <SiteHeader />
       <main>
-        <section className="theme-dark">
+        <section data-nav-tone="dark" className="theme-dark">
           <ContactHero />
         </section>
 
-        <section className="theme-light">
+        <section data-nav-tone="light" className="theme-light">
           <ContactSections />
         </section>
       </main>
