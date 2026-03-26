@@ -155,13 +155,13 @@ export function WorkSections() {
                 <div className="grid gap-8 lg:grid-cols-12 lg:gap-10">
                   <div className="lg:col-span-8">
                     <h2 className="section-title max-w-4xl">
-                      Designed as a portfolio, structured like an index.
+                      Designed as a portfolio — structured like an index.
                     </h2>
 
                     <p className="mt-6 max-w-2xl text-base leading-8 text-[color:var(--muted)] md:text-lg">
-                      The homepage introduces the work through interaction. This
-                      page gives it more structure, more context, and a clearer
-                      way to move through the archive.
+                      On the homepage, I introduce the work through interaction.
+                      This page gives it more structure, more context, and a
+                      clearer way to move through the archive.
                     </p>
 
                     <div className="mt-8 flex flex-wrap gap-3">
@@ -178,7 +178,7 @@ export function WorkSections() {
                         label="Start a project"
                         className="inline-flex items-center rounded-full border border-[color:var(--accent-border)] bg-[color:var(--accent)] px-5 py-3 text-[11px] uppercase tracking-[0.22em] text-[color:var(--accent-ink)] transition-colors duration-300 hover:bg-[color:var(--accent-hover)]"
                       >
-                        Start Project
+                        Start a project
                       </TransitionLink>
                     </div>
                   </div>
@@ -203,7 +203,7 @@ export function WorkSections() {
                         <p className="eyebrow">Primary Focus</p>
                         <p className="mt-2 text-sm leading-7 text-[color:var(--muted)]">
                           Premium websites, portfolio systems, and motion-led
-                          front-end work.
+                          frontend work (monthly subscription + select fixed-scope builds).
                         </p>
                       </div>
                     </div>

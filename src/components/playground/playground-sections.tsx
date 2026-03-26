@@ -120,13 +120,13 @@ export function PlaygroundSections() {
           <div className="lg:col-span-9">
             <div className="surface-panel p-6 md:p-8">
               <h2 className="section-title max-w-4xl">
-                Experimental thinking, production-level execution.
+                Ideas tested here, shipped with production-level craft.
               </h2>
 
               <p className="mt-6 max-w-2xl text-base leading-8 text-[color:var(--muted)] md:text-lg">
-                The playground is where ideas are tested. The work page is where
-                those ideas become shaped, structured, and ready for real-world
-                use.
+                The playground is where I test ideas: motion behavior, interface
+                pacing, and visual rhythm. When something holds up, I bring it into
+                real client work on a monthly subscription — with select fixed-scope builds when the outcome is defined.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-3">
@@ -143,7 +143,7 @@ export function PlaygroundSections() {
                   label="Start a project"
                   className="inline-flex items-center rounded-full border border-[color:var(--accent-border)] bg-[color:var(--accent)] px-5 py-3 text-[11px] uppercase tracking-[0.22em] text-[color:var(--accent-ink)] transition-colors duration-300 hover:bg-[color:var(--accent-hover)]"
                 >
-                  Start Project
+                  Start a project
                 </TransitionLink>
               </div>
             </div>

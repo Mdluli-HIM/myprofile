@@ -1,10 +1,11 @@
 export const contactIntro = {
   eyebrow: "Contact",
-  title: "Start a project.",
-  lead: "Tell me what you’re building and what it should feel like.",
+  title: "Let's talk.",
+  lead:
+    "Send me a message with what you're building and the feel you want. I'll reply with clear next steps for a premium result.",
   email: "hello@yourname.com",
   location: "Cape Town, South Africa",
-  availability: "Available for select freelance projects",
+  availability: "Taking monthly frontend requests, with select fixed-scope builds",
 };
 
 export const contactTypes = [
@@ -12,24 +13,25 @@ export const contactTypes = [
   "Landing Pages",
   "Studio Websites",
   "Case Study Systems",
-  "Frontend Development",
+  "Monthly Frontend Requests",
   "Interaction Design",
   "Motion Systems",
-  "Design Systems",
+  "Fixed-scope Builds",
 ];
 
 export const contactNotes = [
   {
     title: "Best fit",
-    body: "Projects that value clarity, craft, and strong interaction.",
+    body: "Projects that value clarity, craft, and motion with intent.",
   },
   {
     title: "Scope",
-    body: "Creative direction, UI design, motion, and frontend build.",
+    body:
+      "Monthly frontend requests (UI builds, interaction, and production code) plus select fixed-scope builds when you have a defined outcome.",
   },
   {
     title: "Timelines",
-    body: "Smaller sites move fast. Larger systems need more structure.",
+    body: "Smaller updates move quickly. Larger systems need structure, so I confirm the plan before I start.",
   },
 ];
 

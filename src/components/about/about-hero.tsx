@@ -34,7 +34,7 @@ export function AboutHero() {
                   label="Start a project"
                   className="inline-flex items-center gap-3 rounded-full border border-[color:var(--accent-border)] bg-[color:var(--accent)] px-5 py-3 text-[11px] uppercase tracking-[0.22em] text-[color:var(--accent-ink)] transition-colors duration-300 hover:bg-[color:var(--accent-hover)]"
                 >
-                  Start Project
+                  Start a project
                   <ArrowUpRight size={15} />
                 </TransitionLink>
               </div>

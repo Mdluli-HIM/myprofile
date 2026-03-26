@@ -25,14 +25,14 @@ export function HomeProjectReveal() {
 
             <div className="lg:col-span-6">
               <h2 className="section-title max-w-4xl text-[color:var(--light-foreground)]">
-                Selected work built around motion, clarity, and control.
+                Selected work I built around calm motion, clarity, and control.
               </h2>
             </div>
 
             <div className="lg:col-span-3">
               <p className="text-sm leading-7 text-[color:var(--light-muted)]">
-                A tighter index of projects. Open any one to see the full case
-                study.
+                A tighter index of my projects. Open any case study to see
+                how I structured the system end-to-end.
               </p>
             </div>
           </div>

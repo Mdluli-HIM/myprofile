@@ -272,7 +272,7 @@ function MenuOverlayPanel({ onClose }: { onClose: () => void }) {
                   <div className="mt-3 space-y-2 text-lg tracking-[-0.03em] text-black/72">
                     <p>Instagram / @yourhandle</p>
                     <p>Behance / yourname</p>
-                    <p>Available for select freelance projects</p>
+                    <p>Monthly subscription + select fixed-scope builds</p>
                   </div>
                 </div>
 
@@ -283,11 +283,11 @@ function MenuOverlayPanel({ onClose }: { onClose: () => void }) {
                   <div className="mt-4 space-y-3 text-[11px] uppercase tracking-[0.2em] text-black/78">
                     <div className="flex items-start gap-3">
                       <span className="mt-1.5 h-2.5 w-2.5 bg-[color:var(--accent)]" />
-                      <span>Accepting projects</span>
+                      <span>Taking monthly requests</span>
                     </div>
                     <div className="flex items-start gap-3">
                       <span className="mt-1.5 h-2.5 w-2.5 bg-[color:var(--accent)]" />
-                      <span>Motion-led portfolio systems</span>
+                      <span>Motion-led frontend systems</span>
                     </div>
                   </div>
                 </div>

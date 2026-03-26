@@ -65,7 +65,14 @@ function MobileHeroVisual() {
 
 export function Hero() {
   return (
-    <section className="site-container flex min-h-[86svh] items-end pt-28 pb-24 md:min-h-screen md:pt-32 md:pb-32">
+    <section className="relative site-container flex min-h-[86svh] items-end pt-28 pb-24 md:min-h-screen md:pt-32 md:pb-32">
+      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+        <div className="absolute -left-20 top-24 h-[420px] w-[420px] rounded-full bg-[radial-gradient(circle_at_center,rgba(159,58,50,0.18)_0%,rgba(159,58,50,0)_65%)] blur-2xl" />
+        <div className="absolute right-[-160px] top-[180px] h-[360px] w-[360px] rounded-full bg-[radial-gradient(circle_at_center,rgba(159,58,50,0.14)_0%,rgba(159,58,50,0)_62%)] blur-2xl" />
+        <div className="absolute left-[58%] top-[64%] h-2.5 w-2.5 rounded-full bg-[color:var(--accent)]/30" />
+        <div className="absolute left-[22%] top-[58%] h-1.5 w-1.5 rounded-full bg-[color:var(--accent)]/25" />
+      </div>
+
       <div className="grid w-full gap-8 md:gap-10 lg:grid-cols-12">
         <div className="lg:col-span-2">
           <motion.p
@@ -74,7 +81,7 @@ export function Hero() {
             transition={{ duration: 0.48, ease: EASE }}
             className="eyebrow text-[color:var(--accent)]"
           >
-         
+            {homeHeroVisual.eyebrow}
           </motion.p>
         </div>
 
@@ -85,7 +92,7 @@ export function Hero() {
             transition={{ duration: 0.6, ease: EASE }}
             className="display-title max-w-6xl text-[color:var(--foreground)]"
           >
-            Building premium websites that feel clear, sharp, and alive.
+            {homeHeroNote.title}
           </motion.h1>
 
           <motion.div
@@ -95,11 +102,11 @@ export function Hero() {
             className="mt-8 grid gap-6 md:mt-10 md:grid-cols-2 md:gap-8"
           >
             <p className="max-w-md text-base leading-8 text-[color:var(--muted)]">
-          
+              {homeHeroNote.lines[0]}
             </p>
 
             <p className="max-w-md text-base leading-8 text-[color:var(--muted)]">
-             
+              {homeHeroNote.lines[1]}
             </p>
           </motion.div>
 
@@ -117,9 +124,9 @@ export function Hero() {
             transition={{ duration: 0.48, delay: 0.16, ease: EASE }}
             className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-[10px] uppercase tracking-[0.2em] text-[color:var(--muted)] md:mt-5 md:gap-x-6 md:text-[11px]"
           >
-            <span>Premium Web</span>
-            <span>Motion Systems</span>
-            <span>Frontend Craft</span>
+            <span>Monthly Frontend</span>
+            <span>Interaction + Motion</span>
+            <span>Production Craft</span>
           </motion.div>
 
           <MobileHeroVisual />

@@ -148,9 +148,10 @@ export function AboutSections() {
               </h2>
 
               <p className="mt-6 max-w-2xl text-base leading-8 editorial-copy-light md:text-lg">
-                I partner with founders, studios, and individuals who want a
-                digital presence with clarity, atmosphere, and real front-end
-                polish.
+                  I run a monthly frontend subscription for premium teams, plus
+                  select fixed-scope builds when you have a defined outcome.
+                  You get clear communication, calm motion with intent, and
+                  real front-end polish from the first layout to production code.
               </p>
 
               <div className="mt-8">

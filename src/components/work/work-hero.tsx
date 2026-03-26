@@ -23,7 +23,8 @@ export function WorkHero() {
             </h1>
 
             <p className="mt-6 max-w-2xl text-lg leading-8 text-[color:var(--light-muted)] md:text-xl">
-              Swipe, drag, or scroll through a tighter index of projects.
+              Swipe, drag, or scroll through a tighter index of projects I
+              built — then open any case study for the full system story.
             </p>
           </div>
 

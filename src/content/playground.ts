@@ -1,9 +1,11 @@
 export const playgroundIntro = {
   eyebrow: "Playground",
   title:
-    "A space for motion studies, interface experiments, and unfinished ideas.",
-  lead: "This is where I explore interaction, pacing, visual systems, and small creative builds outside of formal client projects. It is less polished by design, but still intentional.",
-  note: "Experiments often begin as a test of rhythm, atmosphere, or behavior before becoming part of a larger project system.",
+    "My space for motion studies, interface experiments, and in-progress ideas.",
+  lead:
+    "This is where I explore interaction pacing, visual systems, and small creative builds outside of formal client work. It's intentionally less polished - but it's still precise, still authored.",
+  note:
+    "Most experiments start as a test of rhythm, atmosphere, or behavior before they become part of a larger project system.",
 };
 
 export const playgroundExperiments = [
@@ -12,14 +14,14 @@ export const playgroundExperiments = [
     category: "Interaction Study",
     year: "2026",
     description:
-      "An exploration of layered hover states where text, image, and motion reveal progressively instead of all at once.",
+      "An exploration of layered hover states where text, image, and motion reveal progressively instead of all at once — on purpose.",
   },
   {
     title: "Editorial Motion Grid",
     category: "Layout Study",
     year: "2026",
     description:
-      "A modular grid system testing how editorial spacing and motion can create stronger hierarchy without adding visual clutter.",
+      "A modular grid system testing how editorial spacing and motion can strengthen hierarchy without adding visual clutter.",
   },
   {
     title: "Cursor Preview System",
@@ -65,7 +67,7 @@ export const playgroundThemes = [
 export const playgroundNotes = [
   {
     title: "Why this exists",
-    body: "The playground is where visual ideas become real behaviors. It helps me test what feels intuitive, refined, and worth carrying into larger projects.",
+    body: "The playground is where visual ideas become real behaviors. It helps me test what feels intuitive, refined, and worth carrying into larger project systems.",
   },
   {
     title: "What I explore",
@@ -73,6 +75,6 @@ export const playgroundNotes = [
   },
   {
     title: "How it informs client work",
-    body: "Many of the strongest production details begin here first. It is where interaction language gets tested before it becomes part of a finished site.",
+    body: "Many of the strongest production details begin here first. It's where interaction language gets tested before it becomes part of a finished site.",
   },
 ];

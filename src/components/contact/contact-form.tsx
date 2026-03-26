@@ -1,23 +1,51 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
 const projectTypes = [
+  "Monthly Frontend Request",
+  "Fixed-scope Build",
   "Portfolio Website",
   "Landing Page",
-  "Studio Website",
-  "Frontend Build",
+  "Interaction / Motion",
   "Other",
 ];
 
+const budgetRanges = [
+  "R10k - R25k",
+  "R25k - R50k",
+  "R50k - R100k",
+  "R100k+",
+] as const;
+
 export function ContactForm() {
-  const [projectType, setProjectType] = useState("Portfolio Website");
+  const [projectType, setProjectType] = useState(
+    "Monthly Frontend Request",
+  );
+  const [budget, setBudget] = useState<string>("");
+  const [isBudgetOpen, setIsBudgetOpen] = useState(false);
   const [isSubmitting] = useState(false);
+
+  const budgetWrapRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (!isBudgetOpen) return;
+
+    function onPointerDown(event: PointerEvent) {
+      const target = event.target as Node;
+      if (!budgetWrapRef.current?.contains(target)) {
+        setIsBudgetOpen(false);
+      }
+    }
+
+    window.addEventListener("pointerdown", onPointerDown);
+    return () => window.removeEventListener("pointerdown", onPointerDown);
+  }, [isBudgetOpen]);
 
   return (
     <motion.form
@@ -95,20 +123,65 @@ export function ContactForm() {
         </div>
 
         <Field label="Budget Range" htmlFor="budget">
-          <select
-            id="budget"
-            name="budget"
-            defaultValue=""
-            className={lightInputClassName}
-          >
-            <option value="" disabled>
-              Select a range
-            </option>
-            <option>R10k - R25k</option>
-            <option>R25k - R50k</option>
-            <option>R50k - R100k</option>
-            <option>R100k+</option>
-          </select>
+          <div ref={budgetWrapRef} className="relative">
+            <input type="hidden" name="budget" value={budget} />
+
+            <button
+              id="budget"
+              type="button"
+              aria-haspopup="listbox"
+              aria-expanded={isBudgetOpen}
+              className={cn(
+                lightInputClassName,
+                "flex items-center justify-between gap-4 cursor-pointer",
+              )}
+              onClick={() => setIsBudgetOpen((prev) => !prev)}
+            >
+              <span className="text-left">
+                {budget || "Select a range"}
+              </span>
+
+              <ChevronDown
+                size={16}
+                className={cn(
+                  "text-[color:var(--accent)] transition-transform duration-300",
+                  isBudgetOpen ? "rotate-180" : "rotate-0",
+                )}
+              />
+            </button>
+
+            {isBudgetOpen ? (
+              <div
+                role="listbox"
+                aria-label="Budget range"
+                className="absolute left-0 right-0 top-[calc(100%_+_12px)] z-[60] light-panel-soft rounded-2xl p-2"
+              >
+                {budgetRanges.map((range) => {
+                  const selected = budget === range;
+                  return (
+                    <button
+                      key={range}
+                      type="button"
+                      role="option"
+                      aria-selected={selected}
+                      onClick={() => {
+                        setBudget(range);
+                        setIsBudgetOpen(false);
+                      }}
+                      className={cn(
+                        "w-full rounded-xl px-4 py-3 text-left text-base leading-7 transition-colors",
+                        selected
+                          ? "bg-[rgba(159,58,50,0.10)] text-[color:var(--accent)]"
+                          : "text-[color:var(--light-muted)] hover:bg-[rgba(17,17,17,0.04)] hover:text-[color:var(--light-foreground)]",
+                      )}
+                    >
+                      {range}
+                    </button>
+                  );
+                })}
+              </div>
+            ) : null}
+          </div>
         </Field>
 
         <Field label="Project Details" htmlFor="message">
@@ -116,7 +189,7 @@ export function ContactForm() {
             id="message"
             name="message"
             rows={6}
-            placeholder="Tell me about the project, goals, timeline, and the kind of feel you want the site to have."
+            placeholder="Tell me what you're building, your goals, timeline, and the feel you want the site to have. If you have references, attach them."
             className="min-h-[180px] w-full resize-y border-0 border-b border-[color:var(--light-line)] bg-transparent px-0 py-4 text-base leading-8 text-[color:var(--light-foreground)] outline-none transition-colors duration-300 placeholder:text-[color:var(--light-muted)] focus:border-[color:var(--accent)]"
           />
         </Field>
@@ -126,12 +199,11 @@ export function ContactForm() {
         <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
           <div className="max-w-2xl">
             <p className="text-sm leading-7 editorial-copy-light">
-              This form is currently a polished visual contact layout. The next
-              step is wiring it to Formspree, Resend, EmailJS, or your own
-              Next.js API route.
+              This form sends a clean request summary. I reply with next steps
+              and a realistic plan.
             </p>
             <p className="mt-4 text-[10px] uppercase tracking-[0.2em] editorial-copy-light md:text-[11px]">
-              Preferred response within 1–3 business days
+              Typical response window: 1-3 business days
             </p>
           </div>
 
@@ -140,7 +212,7 @@ export function ContactForm() {
             disabled={isSubmitting}
             className="inline-flex items-center gap-3 border-b border-[color:var(--accent)] pb-1 text-[11px] uppercase tracking-[0.22em] text-[color:var(--accent)] transition-opacity duration-300 hover:opacity-75 disabled:cursor-not-allowed disabled:opacity-50"
           >
-            <span>{isSubmitting ? "Sending" : "Send Inquiry"}</span>
+            <span>{isSubmitting ? "Sending" : "Send Request"}</span>
             <ArrowUpRight size={15} />
           </button>
         </div>
